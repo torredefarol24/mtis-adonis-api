@@ -22,15 +22,24 @@ Route.get('/', ({ request }) => {
 Route.group( () => {
   Route.post("/signup", "UserController.signup")
   Route.post("/login", "UserController.login")
+  Route.get("/", "UserController.getUsers").middleware('auth')
+  Route.get("/todos", "UserController.getUsersWithTodos").middleware('auth')
+  Route.post('/new/:userid/todo', 'UserController.createTodoForUser').middleware('auth')
+  Route.get("/:id", "UserController.getUsersById").middleware('auth')
+
 })
 .prefix("/api/v1/users")
 
+
 Route.group( () => {
   Route.get("/", 'TodoController.index')
+  Route.get("/high/m1", 'TodoController.getHighPrTodosM1')
   Route.post("/", 'TodoController.createTodo')
+
   Route.get("/:id", "TodoController.getTodoById")
   Route.put("/:id", 'TodoController.editTodoById')
   Route.delete("/:id", "TodoController.deleteTodoById")
+
 })
 .prefix("api/v1/todos")
 .middleware('auth')

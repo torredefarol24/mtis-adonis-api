@@ -10,6 +10,10 @@ class Todo extends Model {
   static get primaryKey(){
     return 'id'
   }
+
+  owner(){
+    return this.belongsTo('App/Models/User')
+  }
 }
 
 module.exports = Todo
