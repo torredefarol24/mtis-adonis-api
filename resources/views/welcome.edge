@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Hello Adonis</title>
+  <link rel='stylesheet' href=' {{ assetsUrl('assets/bootstrap/bootstrap.min.css') }}' />
+  <script src=" {{ assetsUrl('assets/axios/axios.min.js') }}"></script>
+</head>
+<body>
+  <section>
+   <div class='jumbotron'>
+   	<h3> Hi </h3>
+    <p> Check Console</p>
+   </div>
+  </section>
+</body>
+
+<script type='text/javascript'>
+
+  var token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjYsImlhdCI6MTUzMTQ2NDcwMX0.VwegRJ_2hpWdscr7tA_2A0uKO9WGqN4NK5Uhei5cdnk"
+
+  var windowBaseURL = window.location.hostname
+  // var hitURL = "http://localhost:3333/api/v1/"
+  var apiPort = 3333
+  var endpoint = "api/v1/users"
+
+  var targetURL = "http://" + windowBaseURL + ":" + apiPort + "/" + endpoint
+  var headerTokenValue = "BEARER " + token
+
+  // console.log(targetURL)
+
+  var headerOptions = {
+    headers : {
+      "Authorization" : headerTokenValue
+    }
+  }
+
+
+  axios.get(targetURL, headerOptions)
+  .then( resp => {
+    console.log(resp)
+  })
+  .catch( err => {
+    console.log("Err")
+  })
+
+
+</script>
+
+</html>

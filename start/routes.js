@@ -20,6 +20,12 @@ Route.get('/', ({ request }) => {
 })
 
 Route.group( () => {
+  Route.get("/test", "FrontendController.welcome")
+}).prefix("/front")
+
+
+
+Route.group( () => {
   Route.post("/signup", "UserController.signup")
   Route.post("/login", "UserController.login")
   Route.get("/", "UserController.getUsers").middleware('auth')
