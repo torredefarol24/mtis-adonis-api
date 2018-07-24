@@ -24,6 +24,12 @@ Route.group( () => {
 }).prefix("/front")
 
 
+Route.post("signup", "UserController.createUser")
+Route.post("/login", "UserController.loginUser")
+Route.get("/login", "UserController.showLogin")
+Route.get("/logout", "UserController.logoutUser")
+Route.get("/users", "UserController.showUsers").middleware('auth')
+
 
 Route.group( () => {
   Route.post("/signup", "UserController.signup")

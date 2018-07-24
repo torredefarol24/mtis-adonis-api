@@ -1,0 +1,16 @@
+<!doctype html>
+<html>
+  <head>
+    <title> wow</title>
+  </head>
+  <body>
+    <p> Private content</p>
+    @each(user in users)
+      <p>
+        {{-- <a href="/posts/{{post.id}}"> {{ post.title }}</a> --}}
+        {{user.username}}
+      </p>
+    @endeach
+    <a href='/logout'> Logout</a>
+  </body>
+</html>

@@ -1,0 +1,15 @@
+<h2> Sign up</h2>
+<form action='/signup' method='post'>
+  {{ csrfField()}}
+  <input type='text' name='email' placeholder='email' />
+  <input type='password' name='password' placeholder='password' />
+  <input type='submit' value='Signup'  />
+</form>
+
+<h2> Login</h2>
+<form action='/login' method='post'>
+  {{ csrfField()}}
+  <input type='text' name='email' placeholder='email' />
+  <input type='password' name='password' placeholder='password' />
+  <input type='submit' value='Login'  />
+</form>
