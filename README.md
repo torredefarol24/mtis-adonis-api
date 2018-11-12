@@ -1,28 +1,39 @@
-# Adonis API application
+### Adonis Tryout
 
-This is the boilerplate for creating an API server in AdonisJs, it comes pre-configured with.
+To Test This, 
 
-1. Bodyparser
-2. Authentication
-3. CORS
-4. Lucid ORM
-5. Migrations and seeds
-
-## Setup
-
-Use the adonis command to install the blueprint
-
-```bash
-adonis new yardstick --api-only
+- Create .env
+```sh
+$ cd mtis-adonis-api
+$ touch .env
 ```
 
-or manually clone the repo and then run `npm install`.
+- Update .env
+```sh
+DB_CONNECTION=<YOUR_DB_TYPE>
+DB_HOST=<YOUR_DB_HOST>
+DB_PORT=<YOUR_DB_PORT>
+DB_USER=<YOUR_DB_USERNAME>
+DB_PASSWORD=<YOUR_DB_PASSWORD>
+DB_DATABASE=<YOUR_DB_NAME>
+```
 
+- Install Package Dependencies
+```sh
+$ cd mtis-adonis-api
+$ yarn install
+# or, with npm
+$ npm install
+```
 
-### Migrations
+- Run App in PROD Mode
+```sh
+$ cd mtis-adonis-api
+$ yarn start
+```
 
-Run the following command to run startup migrations.
-
-```js
-adonis migration:run
+- Run App in DEV Mode
+```sh
+$ cd mtis-adonis-api
+$ adonis serve --dev
 ```
