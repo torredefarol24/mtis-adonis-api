@@ -10,9 +10,11 @@
   },
   "keywords": [
     "adonisjs",
-    "adonis-app"
+    "adonis-app",
+		"token",
+		"api"
   ],
-  "author": "",
+  "author": "Toufiq (https://twitter.com/burningraven06)",
   "license": "UNLICENSED",
   "private": true,
   "dependencies": {
